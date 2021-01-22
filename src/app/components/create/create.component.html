@@ -1,1 +1,53 @@
-<p>create works!</p>
+<div class="container">
+  <h2 class="titulo"> {{title}} </h2>
+
+  <div class="message success titulo" *ngIf="status == 'success'">
+    El proyecto se ha creado correctamente, puedes verlo <a href="#">aquí.</a>
+  </div>
+
+  <div class="message failed titulo" *ngIf="status == 'failed'">
+    El proyecto no se se ha podido crear.
+  </div>
+
+  <form class="subtitulo" #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
+    <p>
+      <label for="name">Nombre</label>
+      <input type="text" name="name" #name="ngModel" [(ngModel)]="project.name" required>
+      <br>
+      <span class="parrafo" *ngIf="name.touched && !name.valid">El nombre es obligatorio.</span>
+    </p>
+
+    <p>
+      <label for="description">Descripción</label>
+      <textarea name="description" #description="ngModel" [(ngModel)]="project.description" required></textarea>
+      <br>
+      <span class="parrafo" *ngIf="description.touched && !description.valid">La descripción es obligatoria.</span>
+    </p>
+
+    <p>
+      <label for="category">Categoría</label>
+      <input type="text" name="category" #category="ngModel" [(ngModel)]="project.category" required>
+      <br>
+      <span class="parrafo" *ngIf="category.touched && !category.valid">La categoría es obligatoria.</span>
+    </p>
+
+    <p>
+      <label for="langs">Lenguajes</label>
+      <input type="text" name="langs" #langs="ngModel" [(ngModel)]="project.langs" required>
+      <br>
+      <span class="parrafo" *ngIf="langs.touched && !langs.valid">Los lenguajes son obligatorios.</span>
+    </p>
+
+    <p>
+      <label for="year">Año de despliegue</label>
+      <input type="text" name="year" #year="ngModel" [(ngModel)]="project.year">
+    </p>
+
+    <p>
+      <label for="image">Imagen del proyecto</label>
+      <input type="file" name="image" placeholder="Subir imagen" (change)="fileChangeEvent($event)">
+    </p>
+
+    <input type="submit" value="Enviar" [disabled]="!projectForm.form.valid">
+  </form>
+</div>
