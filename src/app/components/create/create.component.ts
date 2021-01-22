@@ -19,10 +19,12 @@ export class CreateComponent implements OnInit {
 
   constructor(
     private _projectService: ProjectService,
-    private _uploadService: UploadService
+    private _uploadService: UploadService,
   ) {
     this.title = "Crear proyecto";
     this.project = new Project('','','','','',2021,'');
+    this.status = '';
+    this.filesToUpload = [];
   }
 
   ngOnInit(): void {
