@@ -2,7 +2,7 @@
   <h2 class="titulo"> {{title}} </h2>
 
   <div class="message success titulo" *ngIf="status == 'success'">
-    El proyecto se ha creado correctamente, puedes verlo <a href="#">aquí.</a>
+    El proyecto se ha creado correctamente, puedes verlo <a [routerLink]="['/proyecto',save_project._id]">aquí.</a>
   </div>
 
   <div class="message failed titulo" *ngIf="status == 'failed'">
