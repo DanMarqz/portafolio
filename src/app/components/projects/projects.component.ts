@@ -29,7 +29,6 @@ export class ProjectsComponent implements OnInit {
       response => {
         if(response.projects){
           this.projects = response.projects;
-          console.log(response.projects);
         }
       },
       error => {

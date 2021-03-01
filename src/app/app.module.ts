@@ -11,6 +11,9 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ErrorComponent } from './components/error/error.component';
 import { DetailComponent } from './components/detail/detail.component';
+import { EditComponent } from './components/edit/edit.component';
+
+import * as $ from 'jquery';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,8 @@ import { DetailComponent } from './components/detail/detail.component';
     ProjectsComponent,
     ContactComponent,
     ErrorComponent,
-    DetailComponent
+    DetailComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,

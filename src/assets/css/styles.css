@@ -252,6 +252,7 @@ form input[type="submit"],
   border: 1px solid #0B0C10;
   cursor: pointer;
   border-radius: 10%;
+  font-family: 'Sarabun', sans-serif;
 }
 
 .button-edit,
@@ -330,4 +331,11 @@ form input[disabled]{
 .linkProject{
   color: #66fcf1;
   text-decoration: none;
+}
+
+.confirm{
+  display:block;
+  font-weight: bold;
+  margin-top: 10px
+  
 }
